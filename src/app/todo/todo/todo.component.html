@@ -1,0 +1,9 @@
+<div class="container">
+    <app-todo-form (getForm)="createTodos($event)"></app-todo-form>
+    <app-todo-list 
+    *ngIf="(tasks$ | async) as tasks"  
+    [list]="tasks"
+    (deleteTodo)="deleteTodo($event)"
+    (goToDetail)="goToDetail($event)"
+    ></app-todo-list>
+</div>

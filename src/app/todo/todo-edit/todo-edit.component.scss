@@ -1,0 +1,13 @@
+mat-card {
+    form > mat-form-field {
+        display: block;
+    }
+    mat-card-header {
+        justify-content: space-between;
+        mat-icon {
+            cursor: pointer;
+        }
+    }
+}
+
+

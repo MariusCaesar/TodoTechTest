@@ -1,0 +1,43 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <h3> Todo list</h3>
+            <mat-form-field class="ml-2">
+                <mat-label>Search todos</mat-label>
+                <input matInput [(ngModel)]="term" name="term" role="textbox" contenteditable="true">
+            </mat-form-field>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <ng-container *ngIf="list.length else noContent" >
+            <div class="animation">
+                <mat-card *ngFor="let task of list | search:term" class="todo">
+                    <mat-card-header>
+                        <mat-card-title>{{ task.label }}</mat-card-title>
+                        <mat-card-subtitle>{{ task.description}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <div class="main">
+                    <mat-chip-list>
+                        <mat-chip [color]="task.done ? 'primary' : 'secondary'">
+                            <p>Done : {{ task.done }}</p>
+                        </mat-chip>
+                        <mat-chip color="warn">
+                            <p>id: {{ task.id }}</p>
+                        </mat-chip>
+                        <mat-chip color="accent">
+                            <p>task category: {{ task.category }}</p>
+                        </mat-chip>
+                    </mat-chip-list>
+                    </div>
+                    <mat-card-actions align="end">
+                        <button mat-raised-button color="primary" (click)="goToDetail.emit(task.id)">edit</button>
+                        <button mat-raised-button color="primary" (click)="deleteTodo.emit(task)">Delete</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </ng-container>
+        <ng-template #noContent>
+            <p>Nothing todo please add something !</p>
+        </ng-template>
+    </mat-card-content>
+</mat-card>

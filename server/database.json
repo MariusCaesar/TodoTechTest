@@ -1,0 +1,25 @@
+{
+  "tasks": [
+    {
+      "label": "Testing testing",
+      "description": "Gotta write some tests",
+      "category": "saab",
+      "done": true,
+      "id": 5
+    },
+    {
+      "label": "sdsd",
+      "description": "sdsd",
+      "category": "bureaucracy",
+      "done": false,
+      "id": 6
+    },
+    {
+      "label": "Adding something new",
+      "description": "Hobbs and shaw is awesome",
+      "category": "bureaucracy",
+      "done": false,
+      "id": 7
+    }
+  ]
+}
